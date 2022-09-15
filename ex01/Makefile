@@ -9,11 +9,11 @@ OBJS = $(SRC:%.c=%.o)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(COMP) $(C_FLAGS) $^ -o $(NAME)
+	@$(COMP) $(C_FLAGS) $^ -o $(NAME)
 	@echo "compiled:)"
 
 %.o: %.c
-	$(COMP) -c $(CFLAGS) -o $@ $<
+	@$(COMP) -c $(CFLAGS) -o $@ $<
 
 clean:
 	@$(RM) *.o
