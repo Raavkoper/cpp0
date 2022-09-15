@@ -1,33 +1,48 @@
 #include "phonebook.hpp"
 
-int main(int argc, char **argv)
-{
-	PhoneBook phonebook;
-	std::string command;
-	int i = 0;
+void	PhoneBook::add(int i) {
+	contacts[i].init();
+}
 
-	if (argc != 1) {
-		std::cout << "Not in the mood for arguments rn (ง'̀-'́)ง" << std::endl;
-		argv = NULL;
-		return (0);
+void	PhoneBook::view() {
+	for (int i = 1; i < 9; i++) {
+		std::cout << std::setw(6) << i;
+		contacts[i - 1].show_names();
+		std::cout << std::endl;
 	}
-	std::cout << "Hola :)\nYou may ADD, SEARCH or EXIT!" << std::endl;
-	while (1) {
-		std::cin >> command;
-		if (command == "ADD") {
-			phonebook.add(i);
-			i++;
-			i %= 8;
-		}
-		else if (command == "SEARCH") {
-			std::cout << "Index      First       Last       Nick" << std::endl;
-			phonebook.view();
-			phonebook.search();
-		}
-		else if (command == "EXIT") {
-			std::cout << "I had a great time.. haha..🥺" << std::endl;
-			return (0);
-		}
-		std::cout << "\noptions havent changed; ADD, SEARCH, EXIT.:)" << std::endl;
+}
+
+void	PhoneBook::search() {
+	int i;
+	char index[13];
+	std::cout << "Who you gonna call...\n";
+	std::cin >> index;
+	if (!strcmp(index, "ghostbusters")) {
+		std::cout << "                       ---" << std::endl;
+		std::cout << "                    -        -- " << std::endl;
+		std::cout << "                --( /     \\ )XXXXXXXXXXXXX" << std::endl;
+		std::cout << "            --XXX(   O   O  )XXXXXXXXXXXXXXX-" << std::endl;
+		std::cout << "           /XXX(       U     )        XXXXXXX\\" << std::endl;
+		std::cout << "         /XXXXX(              )--   XXXXXXXXXXX\\" << std::endl;
+		std::cout << "        /XXXXX/ (      O     )   XXXXXX   \\XXXXX\\" << std::endl;
+		std::cout << "        XXXXX/   /            XXXXXX   \\   \\XXXXX----" << std::endl;
+		std::cout << "        XXXXXX  /          XXXXXX         \\  ----  -" << std::endl;
+		std::cout << "---     XXX  /          XXXXXX      \\           ---" << std::endl;
+		std::cout << "  --  --  /      /\\  XXXXXX            /     ---=" << std::endl;
+		std::cout << "    -        /    XXXXXX              '--- XXXXXX" << std::endl;
+		std::cout << "      --\\/XXX\\ XXXXXX                      /XXXXX" << std::endl;
+		std::cout << "        \\XXXXXXXXX                        /XXXXX/" << std::endl;
+		std::cout << "         \\XXXXXX                         /XXXXX/" << std::endl;
+		std::cout << "           \\XXXXX--  /                -- XXXX/" << std::endl;
+		std::cout << "            --XXXXXXX---------------  XXXXX--" << std::endl;
+		std::cout << "              \\XXXXXXXXXXXXXXXXXXXXXXXX-" << std::endl;
+		std::cout << "                --XXXXXXXXXXXXXXXXXX-" << std::endl;
+		std::cout << "But now forreal...\n";
+		std::cin >> index;
 	}
+	i = atoi(index);
+	if (i >= 1 && i <= 8)
+		contacts[i - 1].view_contact();
+	else
+		std::cout << "Sorry no can't do :(" << std::endl;
 }
