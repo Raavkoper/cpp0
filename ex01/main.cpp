@@ -28,6 +28,6 @@ int main(int argc, char **argv)
 			std::cout << "I had a great time.. haha..🥺" << std::endl;
 			return (0);
 		}
-		std::cout << "\noptions havent changed; ADD, SEARCH, EXIT.:)" << std::endl;
+		std::cout << "options havent changed; ADD, SEARCH, EXIT.:)" << std::endl;
 	}
 }

@@ -19,10 +19,18 @@ void	Contact::init() {
 	std::cin >> secret;
 }
 
+std::string	Contact::truncate(std::string s1) {
+	if (s1.length() > 10) {
+		s1.resize(9);
+		s1.append(".");
+	}
+	return (s1);
+}
+
 void	Contact::show_names() {
-	std::cout << std::setw(10) << fname << '|';
-	std::cout << std::setw(10) << lname << '|';
-	std::cout << std::setw(10) << nname << '|';
+	std::cout << std::setw(10) << truncate(fname)<< '|';
+	std::cout << std::setw(10) << truncate(lname) << '|';
+	std::cout << std::setw(10) << truncate(nname) << '|';
 }
 
 void	Contact::view_contact() {

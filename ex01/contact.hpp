@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include <iomanip>
 
 class Contact {
@@ -12,6 +13,7 @@ private:
 public:
 	Contact();
 	void	init();
+	std::string	truncate(std::string s1);
 	void	show_names();
 	void	view_contact();
 };
