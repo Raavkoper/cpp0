@@ -28,6 +28,5 @@ int main(int argc, char **argv)
 			return (0);
 		}
 		std::cout << "options havent changed; ADD, SEARCH, EXIT.:)" << std::endl;
-		command = "NULL";
 	}
 }
