@@ -6,9 +6,8 @@ int main(int argc, char **argv)
 	std::string command;
 	int i = 0;
 
-	if (argc != 1) {
+	if (argc != 1 && !argv[1]) {
 		std::cout << "Not in the mood for arguments rn (ง'̀-'́)ง" << std::endl;
-		argv = NULL;
 		return (0);
 	}
 	std::cout << "Hola :)\nYou may ADD, SEARCH or EXIT!" << std::endl;
@@ -29,5 +28,6 @@ int main(int argc, char **argv)
 			return (0);
 		}
 		std::cout << "options havent changed; ADD, SEARCH, EXIT.:)" << std::endl;
+		command = "NULL";
 	}
 }

@@ -15,7 +15,7 @@ void	PhoneBook::view() {
 void	PhoneBook::search() {
 	int i;
 	char index[13];
-	std::cout << "Who you gonna call...\n";
+	std::cout << "Who you gonna call..." << std::endl;
 	std::cin >> index;
 	if (!strcmp(index, "ghostbusters")) {
 		std::cout << "                       ---" << std::endl;
@@ -37,7 +37,7 @@ void	PhoneBook::search() {
 		std::cout << "            --XXXXXXX---------------  XXXXX--" << std::endl;
 		std::cout << "              \\XXXXXXXXXXXXXXXXXXXXXXXX-" << std::endl;
 		std::cout << "                --XXXXXXXXXXXXXXXXXX-" << std::endl;
-		std::cout << "But now forreal...\n";
+		std::cout << "But now forreal..." << std::endl;
 		std::cin >> index;
 	}
 	i = atoi(index);
