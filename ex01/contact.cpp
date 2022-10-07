@@ -8,15 +8,15 @@ Contact::Contact() {
 
 void	Contact::init() {
 	std::cout << "First name?..." << std::endl;
-	std::cin >> fname;
+	std::getline(std::cin, fname);
 	std::cout << "Last one?..." << std::endl;
-	std::cin >> lname;
+	std::getline(std::cin, lname);
 	std::cout << "Nickname?..." << std::endl;
-	std::cin >> nname;
+	std::getline(std::cin, nname);
 	std::cout << "Numero de telefono..." << std::endl;
-	std::cin >> phone;
+	std::getline(std::cin, phone);
 	std::cout << "Your darkest secret..." << std::endl;
-	std::cin >> secret;
+	std::getline(std::cin, secret);
 }
 
 std::string	Contact::truncate(std::string s1) {

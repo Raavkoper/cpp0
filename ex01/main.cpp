@@ -12,7 +12,7 @@ int main(int argc, char **argv)
 	}
 	std::cout << "Hola :)\nYou may ADD, SEARCH or EXIT!" << std::endl;
 	while (1) {
-		std::cin >> command;
+		std::getline(std::cin, command);
 		if (command == "ADD") {
 			phonebook.add(i);
 			i++;

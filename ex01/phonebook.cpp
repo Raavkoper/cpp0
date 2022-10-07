@@ -14,10 +14,10 @@ void	PhoneBook::view() {
 
 void	PhoneBook::search() {
 	int i;
-	char index[13];
-	std::cout << "Who you gonna call..." << std::endl;
-	std::cin >> index;
-	if (!strcmp(index, "ghostbusters")) {
+	std::string index;
+	std::cout << "Who you gonna call...\n";
+	std::getline(std::cin, index);
+	if (index == "ghostbusters") {
 		std::cout << "                       ---" << std::endl;
 		std::cout << "                    -        -- " << std::endl;
 		std::cout << "                --( /     \\ )XXXXXXXXXXXXX" << std::endl;
@@ -37,12 +37,14 @@ void	PhoneBook::search() {
 		std::cout << "            --XXXXXXX---------------  XXXXX--" << std::endl;
 		std::cout << "              \\XXXXXXXXXXXXXXXXXXXXXXXX-" << std::endl;
 		std::cout << "                --XXXXXXXXXXXXXXXXXX-" << std::endl;
-		std::cout << "But now forreal..." << std::endl;
-		std::cin >> index;
+		std::cout << "But now forreal...\n";
+		std::getline(std::cin, index);
 	}
-	i = atoi(index);
-	if (i >= 1 && i <= 8)
+	if (index >= "1" && index <= "8")
+	{
+		i = std::stoi(index);
 		contacts[i - 1].view_contact();
+	}
 	else
 		std::cout << "Sorry no can't do :(" << std::endl;
 }
