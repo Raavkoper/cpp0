@@ -43,6 +43,10 @@ void	PhoneBook::search() {
 	if (index >= "1" && index <= "8")
 	{
 		i = std::stoi(index);
+		if (i <= 0 || i >= 9) {
+			std::cout << "Sorry no can't do :(" << std::endl;
+			return ;
+		}
 		contacts[i - 1].view_contact();
 	}
 	else

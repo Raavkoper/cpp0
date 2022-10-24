@@ -9,14 +9,34 @@ Contact::Contact() {
 void	Contact::init() {
 	std::cout << "First name?..." << std::endl;
 	std::getline(std::cin, fname);
+	while (fname[0] == '\0') {
+		std::cout << "Sorry.. come again?" << std::endl;
+		std::getline(std::cin, fname);
+	}
 	std::cout << "Last one?..." << std::endl;
 	std::getline(std::cin, lname);
+	while (lname[0] == '\0') {
+		std::cout << "Sorry.. come again?" << std::endl;
+		std::getline(std::cin, lname);
+	}
 	std::cout << "Nickname?..." << std::endl;
 	std::getline(std::cin, nname);
+	while (nname[0] == '\0') {
+		std::cout << "Sorry.. come again?" << std::endl;
+		std::getline(std::cin, nname);
+	}
 	std::cout << "Numero de telefono..." << std::endl;
 	std::getline(std::cin, phone);
+	while (phone[0] == '\0') {
+		std::cout << "Sorry.. come again?" << std::endl;
+		std::getline(std::cin, phone);
+	}
 	std::cout << "Your darkest secret..." << std::endl;
 	std::getline(std::cin, secret);
+	while (secret[0] == '\0') {
+		std::cout << "Sorry.. come again?" << std::endl;
+		std::getline(std::cin, secret);
+	}
 }
 
 std::string	Contact::truncate(std::string s1) {
@@ -39,9 +59,9 @@ void	Contact::view_contact() {
 		return ;
 	}
 	std::cout << "First      Last      Nick     Phone" << std::endl;
-	std::cout << fname << ',';
-	std::cout << std::setw(10) << lname << ',';
-	std::cout << std::setw(10) << nname << ',';
+	std::cout << fname << ", ";
+	std::cout << std::setw(10) << lname << ", ";
+	std::cout << std::setw(10) << nname << ", ";
 	std::cout << std::setw(10) << phone << std::endl;
 	std::cout << "Secret" << ": " << std::setw(10) << secret << std::endl;
 }
