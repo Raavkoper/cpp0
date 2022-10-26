@@ -11,31 +11,36 @@ void	Contact::init() {
 	std::getline(std::cin, fname);
 	while (fname[0] == '\0') {
 		std::cout << "Sorry.. come again?" << std::endl;
-		std::getline(std::cin, fname);
+		if (!std::getline(std::cin, fname))
+			exit(0);
 	}
 	std::cout << "Last one?..." << std::endl;
 	std::getline(std::cin, lname);
 	while (lname[0] == '\0') {
 		std::cout << "Sorry.. come again?" << std::endl;
-		std::getline(std::cin, lname);
+		if (!std::getline(std::cin, lname))
+			exit(0);
 	}
 	std::cout << "Nickname?..." << std::endl;
 	std::getline(std::cin, nname);
 	while (nname[0] == '\0') {
 		std::cout << "Sorry.. come again?" << std::endl;
-		std::getline(std::cin, nname);
+		if (!std::getline(std::cin, nname))
+			exit(0);
 	}
 	std::cout << "Numero de telefono..." << std::endl;
 	std::getline(std::cin, phone);
 	while (phone[0] == '\0') {
 		std::cout << "Sorry.. come again?" << std::endl;
-		std::getline(std::cin, phone);
+		if (!std::getline(std::cin, phone))
+			exit(0);
 	}
 	std::cout << "Your darkest secret..." << std::endl;
 	std::getline(std::cin, secret);
 	while (secret[0] == '\0') {
 		std::cout << "Sorry.. come again?" << std::endl;
-		std::getline(std::cin, secret);
+		if (!std::getline(std::cin, secret))
+			exit(0);
 	}
 }
 

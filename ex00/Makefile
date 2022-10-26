@@ -4,7 +4,7 @@ COMP = c++
 C_FLAGS = -Wall -Werror -Wextra -std=c++98
 
 SRC = megaphone.cpp
-OBJS = $(SRC:%.c=%.o)
+OBJS = $(SRC:%.cpp=%.o)
 
 all: $(NAME)
 
@@ -12,7 +12,7 @@ $(NAME): $(OBJS)
 	$(COMP) $(C_FLAGS) $^ -o $(NAME)
 	@echo "compiled:)"
 
-%.o: %.c
+%.o: %.cpp
 	$(COMP) -c $(CFLAGS) -o $@ $<
 
 clean:
